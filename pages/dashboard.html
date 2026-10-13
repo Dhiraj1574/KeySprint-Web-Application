@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard · KeySprint</title>
+  <link rel="icon" type="image/png" href="../assets/KeySprint_logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="dashboard" data-nav="show" data-protected="true">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="dashboard.html"><img class="brand-logo" src="../assets/KeySprint_logo.png" alt=""> Key<span>Sprint</span></a>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation"></nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main id="main" class="container page stack">
+    <section class="card dashboard-hero" aria-labelledby="dash-greeting">
+      <div>
+        <h1 id="dash-greeting">Welcome back.</h1>
+        <p class="muted">Your level: <span class="badge badge-accent" id="dash-level">Not rated yet</span></p>
+        <p class="field-hint">Level is based on your best Net WPM: under 20 is Beginner, 20 to 39 is Developing, 40 to 59 is Intermediate, and 60 or more is Advanced.</p>
+      </div>
+      <a class="btn btn-primary" href="practice.html">Start practice</a>
+    </section>
+
+    <section class="grid grid-3" aria-label="Key statistics">
+      <article class="card">
+        <p class="muted">Best Net WPM</p>
+        <p class="stat-value" id="dash-best-wpm">—</p>
+      </article>
+      <article class="card">
+        <p class="muted">Latest Net WPM</p>
+        <p class="stat-value" id="dash-latest-wpm">—</p>
+      </article>
+      <article class="card">
+        <p class="muted">Average accuracy</p>
+        <p class="stat-value" id="dash-avg-accuracy">—</p>
+      </article>
+      <article class="card">
+        <p class="muted">Completed tests</p>
+        <p class="stat-value" id="dash-sessions">0</p>
+      </article>
+      <article class="card">
+        <p class="muted">Total practice time</p>
+        <p class="stat-value" id="dash-practice-time">0 min</p>
+      </article>
+      <article class="card">
+        <p class="muted">Current streak</p>
+        <p class="stat-value" id="dash-streak">No streak yet</p>
+      </article>
+    </section>
+
+    <section class="card" aria-labelledby="week-title">
+      <h2 id="week-title" class="card-title">Last 7 days</h2>
+      <p class="field-hint">Each bar shows your best Net WPM for that day.</p>
+      <div class="weekly-chart" id="dash-chart" aria-hidden="true"></div>
+      <p class="muted" id="dash-chart-summary"></p>
+    </section>
+
+    <section class="card" aria-labelledby="recent-title">
+      <h2 id="recent-title" class="card-title">Recent tests</h2>
+
+      <div class="table-wrap">
+        <table class="data-table" id="dash-recent-table" hidden>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Mode</th>
+              <th scope="col">Difficulty</th>
+              <th scope="col">Net WPM</th>
+              <th scope="col">Accuracy</th>
+            </tr>
+          </thead>
+          <tbody id="dash-recent-body"></tbody>
+        </table>
+      </div>
+
+      <p class="empty-state" id="dash-recent-empty">No tests yet. Complete your first test to see it here.</p>
+    </section>
+
+    <section class="card" aria-labelledby="quick-title">
+      <h2 id="quick-title" class="card-title">Quick links</h2>
+      <div class="modal-actions">
+        <a class="btn btn-secondary" href="profile.html">Edit profile</a>
+        <a class="btn btn-secondary" href="settings.html">Settings</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 KeySprint. Type Faster. Think Sharper. Improve Every Day.</p>
+      <nav aria-label="Footer navigation">
+        <a href="practice.html">Practice</a>
+        <a href="progress.html">Progress</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

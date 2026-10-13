@@ -1,0 +1,306 @@
+/* ============================================================
+   KeySprint - style.css
+   Design tokens, base styles and page layout.
+   ============================================================ */
+
+/* ============================================================
+   TOKENS (dark theme is the default)
+   ============================================================ */
+:root {
+  --bg: #0a1120;
+  --surface: #121c2e;
+  --surface-2: #19243a;
+  --surface-glass: rgba(18, 28, 46, 0.82);
+  --border: #26344f;
+  --border-strong: #35476a;
+  --text: #e8eef8;
+  --text-muted: #9badc7;
+
+  --accent: #22d3ee;
+  --accent-hover: #67e8f9;
+  --accent-ink: #04131a;
+  --accent-soft: rgba(34, 211, 238, 0.14);
+  --accent-glow: rgba(34, 211, 238, 0.35);
+  --row-hover: rgba(34, 211, 238, 0.05);
+
+  --success: #34d399;
+  --danger: #f87171;
+  --danger-ink: #1a0505;
+  --warning: #fbbf24;
+
+  --bg-glow: rgba(34, 211, 238, 0.10);
+  --focus-ring: 0 0 0 3px rgba(34, 211, 238, 0.5);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 30px -12px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.6rem;
+  --text-2xl: 2.25rem;
+
+  --container: 1100px;
+  --transition: 180ms ease;
+}
+
+/* ============================================================
+   LIGHT THEME
+   ============================================================ */
+:root[data-theme="light"] {
+  --bg: #f4f7fc;
+  --surface: #ffffff;
+  --surface-2: #eef3fa;
+  --surface-glass: rgba(255, 255, 255, 0.86);
+  --border: #d6e0ee;
+  --border-strong: #b9c8dc;
+  --text: #0e1a2e;
+  --text-muted: #51627d;
+
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(8, 145, 178, 0.12);
+  --accent-glow: rgba(8, 145, 178, 0.28);
+  --row-hover: rgba(8, 145, 178, 0.05);
+
+  --success: #047857;
+  --danger: #dc2626;
+  --danger-ink: #ffffff;
+  --warning: #b45309;
+
+  --bg-glow: rgba(8, 145, 178, 0.08);
+  --focus-ring: 0 0 0 3px rgba(8, 145, 178, 0.45);
+
+  --shadow-sm: 0 1px 2px rgba(15, 27, 45, 0.06);
+  --shadow-md: 0 10px 30px -14px rgba(15, 27, 45, 0.18), 0 2px 6px rgba(15, 27, 45, 0.06);
+  --shadow-lg: 0 24px 60px -24px rgba(15, 27, 45, 0.3);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(1000px 520px at 0% -8%, var(--bg-glow), transparent 60%),
+    radial-gradient(800px 480px at 100% 0%, var(--bg-glow), transparent 55%),
+    var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 var(--space-3);
+}
+
+h1 {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 var(--space-3);
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-3);
+  top: -100px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: var(--space-3);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.page {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-7);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+.stack > * + * {
+  margin-top: var(--space-4);
+}
+
+.auth-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5) var(--space-4);
+}
+
+/* ============================================================
+   HEADER AND BRAND
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface-glass);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: 64px;
+  flex-wrap: wrap;
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: var(--text-lg);
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.brand:hover {
+  color: var(--text);
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.brand-logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: var(--space-2);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px var(--accent-soft), 0 6px 16px -6px var(--accent-glow);
+}
+
+.auth-logo {
+  display: block;
+  height: 72px;
+  width: auto;
+  margin: 0 auto var(--space-4);
+  filter: drop-shadow(0 8px 18px var(--accent-glow));
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  transition-duration: 0ms !important;
+  animation-duration: 0ms !important;
+  scroll-behavior: auto !important;
+}

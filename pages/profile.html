@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile · KeySprint</title>
+  <link rel="icon" type="image/png" href="../assets/KeySprint_logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="profile" data-nav="show" data-protected="true">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="dashboard.html"><img class="brand-logo" src="../assets/KeySprint_logo.png" alt=""> Key<span>Sprint</span></a>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation"></nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main id="main" class="container page stack">
+    <h1>Profile</h1>
+    <div id="form-alert" aria-live="polite"></div>
+
+    <section class="card profile-summary" aria-label="Account summary">
+      <div class="avatar" id="profile-avatar" aria-hidden="true">?</div>
+      <div>
+        <h2 id="profile-display-name" class="card-title">Loading...</h2>
+        <p class="muted" id="profile-email"></p>
+        <p class="muted">Joined <span id="profile-joined">-</span></p>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="stats-title">
+      <h2 id="stats-title" class="card-title">Your statistics</h2>
+      <div class="grid grid-2">
+        <div>
+          <p class="muted">Personal best (Net WPM)</p>
+          <p class="stat-value" id="stat-best-wpm">—</p>
+        </div>
+        <div>
+          <p class="muted">Average accuracy</p>
+          <p class="stat-value" id="stat-avg-accuracy">—</p>
+        </div>
+        <div>
+          <p class="muted">Completed sessions</p>
+          <p class="stat-value" id="stat-sessions">0</p>
+        </div>
+        <div>
+          <p class="muted">Total practice time</p>
+          <p class="stat-value" id="stat-practice-time">0 min</p>
+        </div>
+      </div>
+      <p class="field-hint">Statistics fill in after your first completed typing test.</p>
+    </section>
+
+    <section class="card" aria-labelledby="edit-title">
+      <h2 id="edit-title" class="card-title">Edit profile</h2>
+
+      <form id="profile-form" novalidate>
+        <div class="field">
+          <label for="profile-name">Full name</label>
+          <input class="input" id="profile-name" name="name" type="text" autocomplete="name">
+          <span class="field-error" id="profile-name-error" hidden></span>
+        </div>
+
+        <div class="field">
+          <label for="profile-bio">Bio (optional)</label>
+          <textarea class="textarea" id="profile-bio" name="bio" maxlength="200"></textarea>
+          <span class="field-hint" id="profile-bio-count">0 / 160 characters</span>
+          <span class="field-error" id="profile-bio-error" hidden></span>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="field">
+            <label for="profile-difficulty">Preferred difficulty</label>
+            <select class="select" id="profile-difficulty" name="difficulty">
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="profile-duration">Preferred test duration</label>
+            <select class="select" id="profile-duration" name="duration">
+              <option value="120">2 minutes</option>
+              <option value="300">5 minutes</option>
+              <option value="600">10 minutes</option>
+              <option value="900">15 minutes</option>
+              <option value="1200">20 minutes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="profile-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="data-title">
+      <h2 id="data-title" class="card-title">Local data</h2>
+      <p class="muted">Resetting deletes every account, practice record and setting stored in this browser, then logs you out.</p>
+      <button type="button" class="btn btn-danger" id="reset-open">Reset local data</button>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="reset-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+      <h2 id="reset-title" class="card-title">Reset all local data?</h2>
+      <p class="muted">This permanently deletes all accounts and practice records stored in this browser. It cannot be undone.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="reset-cancel">Cancel</button>
+        <button type="button" class="btn btn-danger" id="reset-confirm">Yes, reset everything</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 KeySprint. Type Faster. Think Sharper. Improve Every Day.</p>
+      <nav aria-label="Footer navigation">
+        <a href="profile.html">Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

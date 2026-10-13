@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress · KeySprint</title>
+  <link rel="icon" type="image/png" href="../assets/KeySprint_logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="progress" data-nav="show" data-protected="true">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="dashboard.html"><img class="brand-logo" src="../assets/KeySprint_logo.png" alt=""> Key<span>Sprint</span></a>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation"></nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main id="main" class="container page stack">
+    <section class="card progress-controls" aria-labelledby="prog-title">
+      <h1 id="prog-title">Progress</h1>
+      <div class="field" style="margin-bottom:0;margin-left:auto;">
+        <label for="prog-range">Date range for the numbers below</label>
+        <select class="select" id="prog-range">
+          <option value="7">Last 7 days</option>
+          <option value="30">Last 30 days</option>
+          <option value="all" selected>All time</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="grid grid-3" aria-label="Summary">
+      <article class="card">
+        <p class="muted">Best Net WPM (all time)</p>
+        <p class="stat-value" id="prog-best-wpm">—</p>
+      </article>
+      <article class="card">
+        <p class="muted">Average Net WPM</p>
+        <p class="stat-value" id="prog-avg-wpm">—</p>
+      </article>
+      <article class="card">
+        <p class="muted">Average accuracy</p>
+        <p class="stat-value" id="prog-avg-accuracy">—</p>
+      </article>
+      <article class="card">
+        <p class="muted">Completed tests</p>
+        <p class="stat-value" id="prog-sessions">0</p>
+      </article>
+      <article class="card">
+        <p class="muted">Total practice time</p>
+        <p class="stat-value" id="prog-practice-time">0 min</p>
+      </article>
+    </section>
+
+    <section class="card" aria-labelledby="trend-title">
+      <h2 id="trend-title" class="card-title">Last 7 days</h2>
+      <p class="field-hint">Each point is the day's average. The charts always show the last 7 days.</p>
+
+      <div class="grid grid-2">
+        <div>
+          <h3 class="muted">Net WPM</h3>
+          <div id="prog-wpm-chart"></div>
+        </div>
+        <div>
+          <h3 class="muted">Accuracy</h3>
+          <div id="prog-accuracy-chart"></div>
+        </div>
+      </div>
+
+      <p class="muted" id="prog-trend-summary"></p>
+    </section>
+
+    <section class="card" aria-labelledby="mode-title">
+      <h2 id="mode-title" class="card-title">Mode comparison</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Mode</th>
+              <th scope="col">Tests</th>
+              <th scope="col">Average Net WPM</th>
+              <th scope="col">Best Net WPM</th>
+              <th scope="col">Average accuracy</th>
+            </tr>
+          </thead>
+          <tbody id="prog-mode-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="history-title">
+      <h2 id="history-title" class="card-title">Test history</h2>
+
+      <div class="table-wrap">
+        <table class="data-table" id="prog-history-table" hidden>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Mode</th>
+              <th scope="col">Difficulty</th>
+              <th scope="col">Gross WPM</th>
+              <th scope="col">Net WPM</th>
+              <th scope="col">Accuracy</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+          <tbody id="prog-history-body"></tbody>
+        </table>
+      </div>
+
+      <p class="empty-state" id="prog-history-empty">No tests in this date range yet. Complete a test to see it here.</p>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 KeySprint. Type Faster. Think Sharper. Improve Every Day.</p>
+      <nav aria-label="Footer navigation">
+        <a href="progress.html">Progress</a>
+        <a href="practice.html">Practice</a>
+        <a href="results.html">Results</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

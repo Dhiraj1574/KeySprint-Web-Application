@@ -1,0 +1,80 @@
+/* ============================================================
+   KeySprint - responsive.css
+   Breakpoints. Mobile first: base styles are for phones.
+   ============================================================ */
+
+/* ============================================================
+   TABLET AND UP (640px)
+   ============================================================ */
+@media (min-width: 640px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-actions .btn {
+    min-width: 120px;
+  }
+}
+
+/* ============================================================
+   LAPTOP AND UP (960px)
+   ============================================================ */
+@media (min-width: 960px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .page {
+    padding-top: var(--space-7);
+  }
+}
+
+/* ============================================================
+   PHONES (480px and below)
+   ============================================================ */
+@media (max-width: 480px) {
+  h1 {
+    font-size: var(--text-xl);
+  }
+
+  .card {
+    padding: var(--space-4);
+  }
+
+  .site-header .container {
+    justify-content: center;
+  }
+
+  .site-nav .nav-list {
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: var(--space-2);
+  }
+
+  .modal {
+    padding: var(--space-4);
+  }
+
+  .modal-actions .btn {
+    flex: 1 1 140px;
+  }
+
+  .weekly-chart {
+    height: 180px;
+  }
+
+  .practice-text {
+    font-size: var(--text-base);
+    padding: var(--space-3);
+  }
+
+  .stat-value {
+    font-size: var(--text-lg);
+  }
+
+  .dashboard-hero .btn {
+    width: 100%;
+  }
+}

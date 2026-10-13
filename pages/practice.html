@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice · KeySprint</title>
+  <link rel="icon" type="image/png" href="../assets/KeySprint_logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="practice" data-nav="show" data-protected="true">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="dashboard.html"><img class="brand-logo" src="../assets/KeySprint_logo.png" alt=""> Key<span>Sprint</span></a>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation"></nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main id="main" class="container page stack">
+    <h1>Practice</h1>
+    <div id="form-alert" aria-live="polite"></div>
+
+    <section class="card" aria-labelledby="setup-title">
+      <h2 id="setup-title" class="card-title">Choose a test</h2>
+      <div class="grid grid-3">
+        <div class="field">
+          <label for="practice-mode">Mode</label>
+          <select class="select" id="practice-mode">
+            <option value="time">Time Challenge</option>
+            <option value="passage">Passage Challenge</option>
+            <option value="custom">Custom text</option>
+          </select>
+        </div>
+
+        <div class="field" id="practice-duration-field">
+          <label for="practice-duration">Duration</label>
+          <select class="select" id="practice-duration">
+            <option value="120">2 minutes</option>
+            <option value="300">5 minutes</option>
+            <option value="600">10 minutes</option>
+            <option value="900">15 minutes</option>
+            <option value="1200">20 minutes</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="practice-difficulty">Difficulty</label>
+          <select class="select" id="practice-difficulty">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field" id="practice-custom-field" hidden>
+        <label for="practice-custom-text">Your text</label>
+        <textarea class="textarea" id="practice-custom-text" rows="6"
+          placeholder="Paste or type the text you want to practise. Up to 4,000 words (about 24,000 characters)."></textarea>
+        <span class="field-hint">Choose a 10, 15 or 20 minute timer. The test ends when the timer runs out or the whole text is typed. Pasting is allowed here, and line breaks become single spaces.</span>
+      </div>
+
+      <button type="button" class="btn btn-primary" id="practice-start">Start test</button>
+    </section>
+
+    <section class="card stack" aria-labelledby="test-title">
+      <div class="practice-toolbar">
+        <h2 id="test-title" class="card-title">Type the text</h2>
+        <p class="practice-status" id="practice-timer">Start typing to begin the timer.</p>
+        <p class="practice-status" id="practice-progress"></p>
+        <button type="button" class="btn btn-secondary" id="practice-restart">Restart</button>
+      </div>
+
+      <div class="practice-text" id="practice-text" aria-hidden="true">Choose a test and press Start test.</div>
+
+      <label class="sr-only" for="practice-input">Type the text shown above</label>
+      <textarea class="textarea practice-input" id="practice-input" rows="4"
+        spellcheck="false" autocomplete="off" autocapitalize="off"
+        aria-describedby="practice-hint"></textarea>
+      <p class="field-hint" id="practice-hint">Pasting is turned off while typing. Backspace is allowed.</p>
+      <p class="practice-status" id="practice-wordcount" hidden></p>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="restart-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="restart-title">
+      <h2 id="restart-title" class="card-title">Restart this test?</h2>
+      <p class="muted">Your current progress will be lost.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="restart-cancel">Keep typing</button>
+        <button type="button" class="btn btn-danger" id="restart-confirm">Yes, restart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 KeySprint. Type Faster. Think Sharper. Improve Every Day.</p>
+      <nav aria-label="Footer navigation">
+        <a href="practice.html">Practice</a>
+        <a href="progress.html">Progress</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

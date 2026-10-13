@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create account · KeySprint</title>
+  <link rel="icon" type="image/png" href="../assets/KeySprint_logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="register" data-nav="none">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="register.html"><img class="brand-logo" src="../assets/KeySprint_logo.png" alt=""> Key<span>Sprint</span></a>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main id="main" class="auth-page">
+    <div class="card" style="width:100%;max-width:420px;">
+      <img class="auth-logo" src="../assets/KeySprint_logo.png" alt="KeySprint logo">
+      <h1>Create account</h1>
+      <p class="muted">Create a demo account. Your practice history stays in this browser.</p>
+
+      <div id="form-alert" aria-live="polite"></div>
+
+      <form id="register-form" novalidate>
+        <div class="field">
+          <label for="reg-name">Full name</label>
+          <input class="input" id="reg-name" name="name" type="text" autocomplete="name">
+          <span class="field-error" id="reg-name-error" hidden></span>
+        </div>
+
+        <div class="field">
+          <label for="reg-email">Email</label>
+          <input class="input" id="reg-email" name="email" type="email" autocomplete="email">
+          <span class="field-error" id="reg-email-error" hidden></span>
+        </div>
+
+        <div class="field">
+          <label for="reg-password">Password</label>
+          <div class="input-with-action">
+            <input class="input" id="reg-password" name="password" type="password" autocomplete="new-password">
+            <button type="button" class="btn btn-secondary" data-toggle-password="reg-password" aria-controls="reg-password" aria-pressed="false">Show</button>
+          </div>
+          <p class="field-hint" id="reg-password-hint">Use at least 8 characters. Mixing letter cases, numbers and symbols makes it stronger.</p>
+          <span class="field-error" id="reg-password-error" hidden></span>
+        </div>
+
+        <div class="field">
+          <label for="reg-confirm">Confirm password</label>
+          <div class="input-with-action">
+            <input class="input" id="reg-confirm" name="confirm" type="password" autocomplete="new-password">
+            <button type="button" class="btn btn-secondary" data-toggle-password="reg-confirm" aria-controls="reg-confirm" aria-pressed="false">Show</button>
+          </div>
+          <span class="field-error" id="reg-confirm-error" hidden></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Create account</button>
+      </form>
+
+      <p class="muted" style="margin-top:var(--space-4);">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 KeySprint. Type Faster. Think Sharper. Improve Every Day.</p>
+      <nav aria-label="Footer navigation">
+        <a href="login.html">Log in</a>
+        <a href="register.html">Create account</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

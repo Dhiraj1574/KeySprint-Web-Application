@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results · KeySprint</title>
+  <link rel="icon" type="image/png" href="../assets/KeySprint_logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="results" data-nav="show" data-protected="true">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="dashboard.html"><img class="brand-logo" src="../assets/KeySprint_logo.png" alt=""> Key<span>Sprint</span></a>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation"></nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main id="main" class="container page stack">
+    <h1>Results</h1>
+
+    <section class="card empty-state" id="results-empty" hidden>
+      <p>You have no saved tests yet.</p>
+      <a class="btn btn-primary" href="practice.html">Start your first test</a>
+    </section>
+
+    <div id="results-content" class="stack" hidden>
+      <section class="card stack" aria-labelledby="results-title">
+        <div>
+          <h2 id="results-title" class="card-title">Latest test</h2>
+          <p class="muted">Completed <span id="res-completed">—</span></p>
+        </div>
+
+        <div class="grid grid-3">
+          <div>
+            <p class="muted">Net WPM</p>
+            <p class="stat-value" id="res-net">—</p>
+          </div>
+          <div>
+            <p class="muted">Gross WPM</p>
+            <p class="stat-value" id="res-gross">—</p>
+          </div>
+          <div>
+            <p class="muted">Accuracy</p>
+            <p class="stat-value" id="res-accuracy">—</p>
+          </div>
+          <div>
+            <p class="muted">Correct key presses</p>
+            <p class="stat-value" id="res-correct">—</p>
+          </div>
+          <div>
+            <p class="muted">Incorrect key presses (incl. backspace)</p>
+            <p class="stat-value" id="res-incorrect">—</p>
+          </div>
+          <div>
+            <p class="muted">Duration</p>
+            <p class="stat-value" id="res-duration">—</p>
+          </div>
+          <div>
+            <p class="muted">Mode</p>
+            <p id="res-mode"></p>
+          </div>
+          <div>
+            <p class="muted">Difficulty</p>
+            <p id="res-difficulty"></p>
+          </div>
+        </div>
+
+        <p id="res-previous" class="muted"></p>
+        <p id="res-feedback" class="alert alert-info"></p>
+      </section>
+
+      <div class="modal-actions">
+        <a class="btn btn-secondary" href="progress.html">View progress</a>
+        <a class="btn btn-secondary" href="practice.html">Choose another test</a>
+        <a class="btn btn-primary" id="res-retry" href="practice.html">Try again</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 KeySprint. Type Faster. Think Sharper. Improve Every Day.</p>
+      <nav aria-label="Footer navigation">
+        <a href="results.html">Results</a>
+        <a href="practice.html">Practice</a>
+        <a href="progress.html">Progress</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
